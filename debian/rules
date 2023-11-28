@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+PACKAGE_NAME=$(shell grep PACKAGE_NAME= dkms.conf | cut -d= -f2 | cut -d\" -f2)
+PACKAGE_VERSION=$(shell grep PACKAGE_VERSION= dkms.conf | cut -d= -f2 | cut -d\" -f2)
+export PACKAGE_NAME PACKAGE_VERSION
+
+%:
+	dh $@ --with dkms
+
+# install via install file
+# #override_dh_install:
+
+# # install via rules
+# override_dh_install:
+#         dh_install kernel usr/src/$(PACKAGE_NAME)-$(PACKAGE_VERSION)/
+#         dh_install dkms.conf usr/src/$(PACKAGE_NAME)-$(PACKAGE_VERSION)/
+
+override_dh_auto_configure:
+override_dh_auto_build:

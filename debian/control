@@ -1,0 +1,11 @@
+Source: ena-dkms
+Section: kernel
+Priority: optional
+Maintainer: Vincent Riesop <v.riesop@sap.com>
+Build-Depends: debhelper-compat (= 12), dkms, dh-dkms
+Standards-Version: 3.9.2
+
+Package: ena-dkms
+Architecture: all
+Depends: dkms
+Description: ena driver dkms package for gardenlinux

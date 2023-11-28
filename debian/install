@@ -1,0 +1,8 @@
+#!/bin/sh
+
+: "${PACKAGE_NAME:?Need to set PACKAGE_NAME}"
+: "${PACKAGE_VERSION:?Need to set PACKAGE_VERSION}"
+
+for item in kernel dkms.conf; do
+  echo "${item}" "/usr/src/${PACKAGE_NAME}-${PACKAGE_VERSION}"
+done
