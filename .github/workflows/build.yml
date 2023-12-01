@@ -4,4 +4,7 @@ jobs:
   build_pkg:
     uses: gardenlinux/package-build/.github/workflows/build_pkg.yml@main
     with:
-      source: native
+      source: git+https://github.com/amzn/amzn-drivers.git#master
+      debian_source: native
+      git_filter: ena_linux_[0-9\.]*$
+      git_tag_match: ena_linux_([0-9\.]*$)
