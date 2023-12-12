@@ -1,5 +1,5 @@
 name: ena-dkms
-on: push
+on: ["push", "workflow_dispatch"]
 jobs:
   build_pkg:
     uses: gardenlinux/package-build/.github/workflows/build_pkg.yml@main
